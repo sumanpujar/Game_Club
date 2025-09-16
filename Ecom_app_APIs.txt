@@ -1,0 +1,89 @@
+
+
+http://localhost:8080/products/68c849a1ad228f59a572a0e3
+
+Base URL : http://localhost:8080
+
+API End Points: /admin/products
+=================================
+1> POST /admin/products -> (Create product)
+Request body:{
+					"name": "Vivo Y21 ",
+					"description" : "smart phone High quality camara",
+					"category":"mobile",
+					"price": 25000,
+					"stock": 10,
+					"tags" :"mobile,electronis,smart phone,android phone"
+			 }
+				
+Response Body:201(status code for created status)
+				{
+					"_id" : "abcd001",
+					"name": "Vivo Y21 ",
+					"description" : "smart phone High quality camara",
+					"category":"mobile",
+					"price": 25000,
+					"stock": 10,
+					"tags" :"mobile,electronis,smart phone,android phone"
+				}
+				
+----------------------------------------------------------------------------				
+2> GET /admin/products -> (get all products)	
+				
+Response Body:200 (status code :fetch is ok)
+				[{
+					"_id" : "abcd001",
+					"name": "Vivo Y21 ",
+					"description" : "smart phone High quality camara",
+					"category":"mobile",
+					"price": 25000,
+					"stock": 10,
+					"tags" :"mobile,electronis,smart phone,android phone"
+				},
+					.......
+				
+				]
+------------------------------------------------------------------------------
+3> GET /admin/products/abcd001      -> (get product by id)	
+
+Response Body:200 (status code :fetch is ok)
+				{
+					"_id" : "abcd001",
+					"name": "Vivo Y21 ",
+					"description" : "smart phone High quality camara",
+					"category":"mobile",
+					"price": 25000,
+					"stock": 10,
+					"tags" :"mobile,electronis,smart phone,android phone"
+				}
+---------------------------------------------------------------------------			
+
+4> PUT /admin/products/abcd001 -> (Update product)
+Request body:{
+					"_id" : "abcd001",
+					"name": "Vivo Y21 ",
+					"description" : "smart phone High quality camara",
+					"category":"mobile",
+					"price": 3000,
+					"stock": 10,
+					"tags" :"mobile,electronis,smart phone,android phone"
+			 }
+				
+Response Body: 200(status code for updated successfully)
+			{
+					"_id" : "abcd001",
+					"name": "Vivo Y21 ",
+					"description" : "smart phone High quality camara",
+					"category":"mobile",
+					"price": 25000,
+					"stock": 10,
+					"tags" :"mobile,electronis,smart phone,android phone"
+			}
+-------------------------------------------------------------------------
+5> DELETE /admin/products/abcd001      -> (delete product by id)	
+
+Response Body:200 (status code :deleted successfully)
+				{
+					"message" : " Deleted successfully"
+				}			
+--------------------------------------------------------------------------
