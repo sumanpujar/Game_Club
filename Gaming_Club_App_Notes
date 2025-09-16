@@ -13,3 +13,105 @@ recharges	_id ObjectId PK, memberId ObjectId (ref → members._id), amount Doubl
 transactions	_id ObjectId PK, memberId ObjectId (ref → members._id), gameId ObjectId (ref → games._id), amount Double NOT NULL, dateTime Date DEFAULT now()
 collections	_id ObjectId PK, date Date NOT NULL, amount Double NOT NULL
 admin_users	_id ObjectId PK, username String UNIQUE NOT NULL, password String NOT NULL
+
+=====================================================================================================================
+# I. Java & Maven Development Setup (VS Code)
+
+## 1. Install Java Development Kit (JDK)
+1. Download the latest JDK from [Adoptium](https://adoptium.net/) or [Oracle](https://www.oracle.com/java/technologies/downloads/).
+2. Run the installer and follow the instructions.
+3. Set the `JAVA_HOME` environment variable:
+   - Windows: Search "Environment Variables" > Add new system variable `JAVA_HOME` pointing to your JDK folder (e.g., `C:\Program Files\Eclipse Adoptium\jdk-XX`).
+   - Add JDK `bin` folder to your `PATH` variable.
+4. Verify installation:
+    ```powershell
+    java -version
+    ```
+
+## 2. Install Maven
+1. Download Maven from [here](https://maven.apache.org/download.cgi).
+2. Extract the archive to a folder (e.g., `C:\Program Files\Apache\maven`).
+3. Add the Maven `bin` folder to your `PATH` environment variable.
+4. Verify installation:
+    ```powershell
+    mvn -version
+    ```
+
+## Java App Development IDE 
+### 3a. Install "Spring Tools for Eclipse (Windows)"
+* We will use STS (Spring Tool Suite) for Java App Development
+1. Download and Install [Spring Tools for Eclipse (Windows)](https://spring.io/tools)
+2. Let us start to use STS for Spring Boot App Development.
+
+OR
+
+### 3b. Install Visual Studio Code (VS Code)
+* We will use VSC (Visual Studio Code) for React App Development
+* And VSC will abe used optionally for Java Development as well.
+1. Download and install [VS Code](https://code.visualstudio.com/).
+2. Install `Thunder Client` VSC extension to test Java App's APIs
+3. Open VS Code and install the following extensions:
+   - [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
+   - [Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven)
+
+
+## 4. Create a Java/Maven Project
+1. Use [Spring Initializr](https://start.spring.io/) to generate a Spring Boot project (select Maven as build tool).
+2. Download and extract the project.
+3. Open the project folder in VS Code.
+
+## 5. Run the Application
+1. Open a `command prompt` or `terminal in VS Code`.
+2. Run:
+    ```powershell
+    mvn spring-boot:run
+    ```
+
+## 6. Useful Links
+- [Spring Boot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/)
+- [Java Documentation](https://docs.oracle.com/en/java/)
+
+```
+```
+
+# II.Spring Boot CRUD Operations with MongoDB
+
+## 1.  Create Spring Boot Project
+Use [Spring Initializr](https://start.spring.io/) with:
+- Dependencies: Spring Web, Spring Data MongoDB
+
+**Detailed To Be filled in the `Spring Initializr`**
+1. Project : Maven
+2. Language : Java 
+3. Spring Boot : 3.5.5.
+4. Project meta data 
+   * Group : com.mahesh
+   * Artifact : ecomsystem
+   * Name : ecomsystem 
+   * Description : ecommerce system with admin and customer apps 
+   * Package Name: com.mahesh.ecomsystem
+   * Packaging : jar
+   * Java : 21
+5. Dependencies: Spring Web (WEB), Spring Data MongoDB (NOSQL) 
+
+#### Here’s an explanation of each attribute in a Spring Boot project setup:
+- **Group**: The base package or organization name (e.g., `com.mahesh`). Used for package naming and Maven coordinates.
+- **Artifact**: The project’s unique name (e.g., `ecomsystem`). It becomes the name of the built JAR file.
+- **Name**: The display name of the project (e.g., `ecomsystem`). Used in documentation and metadata.
+- **Description**: A short summary of the project’s purpose (e.g., `ecommerce system with admin and customer apps`).
+- **Package Name**: The root Java package for your code (e.g., `com.mahesh.ecomsystem`). All classes are placed under this package.
+- **Packaging**: The output format, usually `jar` (Java ARchive) or `war` (Web ARchive).
+- **Java**: The Java version to use (e.g., 21).
+
+These attributes help organize, build, and identify your Spring Boot application.
+
+#### Here are different examples of the Spring Initializr attributes for various project types:
+
+**1. E-commerce Application**
+- Group: `com.shoponline`
+- Artifact: `ecommerce-app`
+- Name: `ecommerce-app`
+- Description: `Online shopping platform with cart and payment features`
+- Package Name: `com.shoponline.ecommerce`
+- Packaging: `jar`
+- Java: `21`
