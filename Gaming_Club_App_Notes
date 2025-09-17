@@ -115,3 +115,17 @@ These attributes help organize, build, and identify your Spring Boot application
 - Package Name: `com.shoponline.ecommerce`
 - Packaging: `jar`
 - Java: `21`
+
+
+============================================================================
+Exception handling:
+Coding steps:
+1>create folder “exceptions “under your project folder
+ 	( com.test.ecomproject.exceptions)
+>Create file BusinessException.java,IdNotPresentException.java,  
+  	 GlobalExceptions.java files under exceptions folder.
+2> create folder “services “  under your project folder
+( com.test.ecomproject.services)
+>Create file ProductService.java under services folder.
+
+3>add exception related code in ProductContler.java file
